@@ -7,27 +7,25 @@
 # Inherit from RMX1901 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common Ancient stuff
-$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit some common aosp stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Gapps
 TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
-ANCIENT_GAPPS := true
+TARGET_BOOT_ANIMATION_RES := 1080
 
-# Official-ify
-ANCIENT_OFFICIAL := true
-FORCE_OTA := true
+# PPUI Official-ify
+CUSTOM_BUILD_TYPE=OFFICIAL
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_USES_BLUR := true
-EXTRA_FOD_ANIMATIONS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := Realme
 PRODUCT_DEVICE := RMX1901
 PRODUCT_MANUFACTURER := Realme
-PRODUCT_NAME := ancient_RMX1901
+PRODUCT_NAME := aosp_RMX1901
 PRODUCT_MODEL := Realme X
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
